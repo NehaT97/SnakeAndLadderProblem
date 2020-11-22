@@ -22,9 +22,9 @@ public class SnakeAndLadderGame {
                 if (values<100)
                 {
                     die_value = dieRoll();
+                    no_of_die_rolls=no_of_die_rolls+1;
                     System.out.println("DieValue:" + die_value);
                     int option = (int) (Math.random() * 10) % 3;
-                    System.out.println("Option:" + option);
                     switch (option) {
                         case 0:
                             break;
