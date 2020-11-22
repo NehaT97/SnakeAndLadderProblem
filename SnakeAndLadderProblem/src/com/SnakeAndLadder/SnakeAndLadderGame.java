@@ -1,21 +1,18 @@
 package com.SnakeAndLadder;
 public class SnakeAndLadderGame {
 
-    /* uc1: single player at start position */
         public static int position_of_player1=0;
+        public static int position_of_player2=0;
         public static int no_of_die_rolls=0;
         public static int die_value;
         public static int values=0;
 
-
-     /* uc2: player Rolls The Die */
         public static int dieRoll()
         {
                 int die_value=(int)(Math.random()*6)+1;
                 return die_value;
         }
 
-      /* uc3: player check for option */
         public static int play(int value)
         {
                 values=value;
@@ -38,7 +35,7 @@ public class SnakeAndLadderGame {
                             break;
 
                         default:
-                            System.out.println("Something Unexpectated Happen !!");
+                            System.out.println("Something Unexpected Happen !!");
 
                     }
                 }
@@ -79,18 +76,22 @@ public class SnakeAndLadderGame {
 
         public static void main(String args[])
         {
-            System.out.println("WELCOME TO SNAKE AND LADDER GAME");
-
+                System.out.println("WELCOME TO SNAKE AND LADDER GAME");
                 SnakeAndLadderGame game = new SnakeAndLadderGame();
-                while (position_of_player1<100) {
-                position_of_player1 = game.play(position_of_player1);
-                System.out.println("Number Of Die Roll :" + no_of_die_rolls + "\n" + "Position of Player1 :" + position_of_player1);
+
+                while (position_of_player1<100 && position_of_player2<100) {
+                    position_of_player1 = game.play(position_of_player1);
+                    System.out.println("Number Of Die Roll :" + no_of_die_rolls + "\tPosition of Player1 :" + position_of_player1);
+
+                    position_of_player2 = game.play(position_of_player2);
+                    System.out.println("Number Of Die Roll :" + no_of_die_rolls  + "\tPosition of Player2 :" + position_of_player2);
                 }
+
                 if(position_of_player1==100) {
-                    System.out.println("player 1 is winner");
+                    System.out.println("Player 1 is Winner");
+                }else {
+                    System.out.println("Player 2 is Winner");
                 }
 
         }
-
-
 }
