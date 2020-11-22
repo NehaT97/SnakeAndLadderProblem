@@ -60,6 +60,7 @@ public class SnakeAndLadderGame {
                     {
                         values=values+die_value;
                     }
+
                 }
             }
         }
@@ -84,7 +85,11 @@ public class SnakeAndLadderGame {
                 while (position_of_player1<100) {
                 position_of_player1 = game.play(position_of_player1);
                 System.out.println("Number Of Die Roll :" + no_of_die_rolls + "\n" + "Position of Player1 :" + position_of_player1);
-            }
+                }
+                if(position_of_player1==100) {
+                    System.out.println("player 1 is winner");
+                }
+
         }
 
 
